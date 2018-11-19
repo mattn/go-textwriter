@@ -37,7 +37,8 @@ func (t *text) Transform(dst, src []byte, atEOF bool) (nDst, nSrc int, err error
 	return
 }
 
-func (text *text) Reset() {
+func (t *text) Reset() {
+	t.prev = 0
 }
 
 func NewWriter(w io.Writer) io.WriteCloser {
